@@ -4,7 +4,7 @@ function createProductElement(product) {
             <img src="${product.image}">
             <div class="box">
                 <span class="title">${product.title}</span>
-                <span class="price">$${product.price}</span>
+                <span class="price">U$D ${product.price}</span>
                 <div class="buttons">
                     <button class="CartBtn">
                         <span class="IconContainer"> 
@@ -30,6 +30,7 @@ fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(json => {
         const itemsContainer = document.getElementById("items")
+        itemsContainer.innerHTML = ""
         json.forEach(product => {
             const productHTML = createProductElement(product)
             itemsContainer.innerHTML += productHTML

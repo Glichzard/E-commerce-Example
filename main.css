@@ -24,9 +24,10 @@ body {
 .navbar input.form-control {
   background: rgba(255, 255, 255, 0.14) !important;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.222) !important;
 }
 .navbar input.form-control::placeholder {
-  color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.24);
 }
 
 .contenedor {
@@ -35,13 +36,16 @@ body {
   height: 100vh;
 }
 .contenedor .sidebar {
-  height: auto !important;
   margin: calc(56px + 1rem) 0 1rem 1rem;
   border-radius: 0.7rem;
   background-color: rgba(255, 255, 255, 0.14) !important;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.222);
+  overflow-y: scroll;
+}
+.contenedor .sidebar button.btn-toggle:hover, .contenedor .sidebar button.btn-toggle:active {
+  background-color: rgba(255, 255, 255, 0.14) !important;
 }
 
 #items {
@@ -69,6 +73,10 @@ body {
   transition: all ease 0.3s;
   gap: 1rem;
 }
+.product .img-placeholder {
+  width: 120px;
+  height: 130px;
+}
 .product img {
   width: 120px;
   border-radius: 0.5rem;
@@ -78,6 +86,7 @@ body {
   flex-direction: column;
   justify-content: start;
   height: 100%;
+  gap: 0.25rem;
 }
 .product .box .title {
   font-size: 1rem;
@@ -93,6 +102,10 @@ body {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+.product .box .buttons button.placeholder {
+  width: 140px;
+  height: 40px;
 }
 .product .box .buttons .CartBtn {
   width: 140px;
