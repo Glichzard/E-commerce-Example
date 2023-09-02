@@ -1,3 +1,213 @@
+html {
+  height: 100%;
+}
 
+body {
+  background: rgb(22, 2, 40);
+  background-image: url("bnmmmm.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  top: 0;
+  left: 0;
+}
+.navbar input.form-control {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: white;
+}
+.navbar input.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.14);
+}
+
+.contenedor {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+.contenedor .sidebar {
+  height: auto !important;
+  margin: calc(56px + 1rem) 0 1rem 1rem;
+  border-radius: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+
+#items {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  height: 100%;
+  overflow-y: scroll;
+  padding-top: calc(56px + 1rem);
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+  gap: 1rem;
+}
+.product img {
+  width: 120px;
+  border-radius: 0.5rem;
+}
+.product .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+}
+.product .box .title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.product .box span {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.product .box .buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.product .box .buttons .CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  position: relative;
+}
+.product .box .buttons .IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+.product .box .buttons .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.5s;
+  font-size: 14px;
+  font-weight: 300;
+}
+.product .box .buttons .CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+.product .box .buttons .CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: 0.5s;
+}
+.product .box .buttons .cta {
+  width: 140px;
+  height: 40px;
+  border: none;
+  background: none;
+}
+.product .box .buttons .cta span {
+  padding-bottom: 7px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding-right: 7px;
+  text-transform: uppercase;
+}
+.product .box .buttons .cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.product .box .buttons .cta:hover svg {
+  transform: translateX(0);
+  opacity: 1;
+}
+.product .box .buttons .cta:active svg {
+  transform: scale(0.9);
+}
+.product .box .buttons .hover-underline-animation {
+  position: relative;
+  color: white;
+  padding-bottom: 20px;
+}
+.product .box .buttons .hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.product .box .buttons .cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.product:hover {
+  box-shadow: 0px 0px 20px 1px rgba(255, 187, 118, 0.2470588235);
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media (max-width: 370px) {
+  #items .product {
+    flex-direction: column;
+  }
+  #items .product img {
+    width: 100%;
+  }
+  #items .buttons {
+    justify-content: space-between;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
