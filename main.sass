@@ -50,6 +50,181 @@ body
       &:hover
         background: rgba(255, 255, 255, 0.14)
 
+.ui-bookmark
+  --icon-size:24px
+  --icon-secondary-color:rgb(77, 77, 77)
+  --icon-hover-color:rgb(97, 97, 97)
+  --icon-primary-color:gold
+  --icon-circle-border:1px solid var(--icon-primary-color)
+  --icon-circle-size:35px
+  --icon-anmt-duration:0.3s
+
+  input
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    display: none
+
+  .bookmark
+    width: var(--icon-size)
+    height: auto
+    cursor: pointer
+    -webkit-transition: 0.2s
+    -o-transition: 0.2s
+    transition: 0.2s
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    position: relative
+    -webkit-transform-origin: top
+    -ms-transform-origin: top
+    transform-origin: top
+
+    i
+      position: absolute
+      top: 0
+      left: 0
+      transform: translate(23%, -50%)
+      transition: .2s ease
+
+      &.bi-bookmark-plus-fill
+        opacity: 1
+        z-index: 6
+      &.bi-bookmark-dash-fill
+        opacity: 0
+        z-index: 5
+
+.bookmark
+  &::after
+    content: ""
+    position: absolute
+    width: 10px
+    height: 10px
+    -webkit-box-shadow: 0 30px 0 -4px var(--icon-primary-color), 30px 0 0 -4px var(--icon-primary-color), 0 -30px 0 -4px var(--icon-primary-color), -30px 0 0 -4px var(--icon-primary-color), -22px 22px 0 -4px var(--icon-primary-color), -22px -22px 0 -4px var(--icon-primary-color), 22px -22px 0 -4px var(--icon-primary-color), 22px 22px 0 -4px var(--icon-primary-color)
+    box-shadow: 0 30px 0 -4px var(--icon-primary-color), 30px 0 0 -4px var(--icon-primary-color), 0 -30px 0 -4px var(--icon-primary-color), -30px 0 0 -4px var(--icon-primary-color), -22px 22px 0 -4px var(--icon-primary-color), -22px -22px 0 -4px var(--icon-primary-color), 22px -22px 0 -4px var(--icon-primary-color), 22px 22px 0 -4px var(--icon-primary-color)
+    border-radius: 50%
+    -webkit-transform: scale(0)
+    -ms-transform: scale(0)
+    transform: scale(0)
+
+  &::before
+    content: ""
+    position: absolute
+    border-radius: 50%
+    border: var(--icon-circle-border)
+    opacity: 0
+
+.ui-bookmark
+  input:checked + .bookmark
+    &::after
+      -webkit-animation: circles var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+      animation: circles var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+      -webkit-animation-delay: var(--icon-anmt-duration)
+      animation-delay: var(--icon-anmt-duration)
+
+    color: var(--icon-primary-color)
+    -webkit-animation: bookmark var(--icon-anmt-duration) forwards
+    animation: bookmark var(--icon-anmt-duration) forwards
+    -webkit-transition-delay: 0.3s
+    -o-transition-delay: 0.3s
+    transition-delay: 0.3s
+
+    i.bi-bookmark-plus-fill
+      opacity: 0
+      z-index: 5
+    i.bi-bookmark-dash-fill
+      opacity: 1
+      z-index: 6
+
+    &::before
+      -webkit-animation: circle var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+      animation: circle var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+      -webkit-animation-delay: var(--icon-anmt-duration)
+      animation-delay: var(--icon-anmt-duration)
+
+.custom-tooltip 
+  --bs-tooltip-bg: #333
+  --bs-tooltip-color: white
+
+@-webkit-keyframes bookmark
+  50%
+    -webkit-transform: scaleY(0.6)
+    transform: scaleY(0.6)
+
+  100%
+    -webkit-transform: scaleY(1)
+    transform: scaleY(1)
+
+@keyframes bookmark
+  50%
+    -webkit-transform: scaleY(0.6)
+    transform: scaleY(0.6)
+
+  100%
+    -webkit-transform: scaleY(1)
+    transform: scaleY(1)
+
+@-webkit-keyframes circle
+  from
+    width: 0
+    height: 0
+    opacity: 0
+
+  90%
+    width: var(--icon-circle-size)
+    height: var(--icon-circle-size)
+    opacity: 1
+
+  to
+    opacity: 0
+
+@keyframes circle
+  from
+    width: 0
+    height: 0
+    opacity: 0
+
+  90%
+    width: var(--icon-circle-size)
+    height: var(--icon-circle-size)
+    opacity: 1
+
+  to
+    opacity: 0
+
+@-webkit-keyframes circles
+  from
+    -webkit-transform: scale(0)
+    transform: scale(0)
+
+  40%
+    opacity: 1
+
+  to
+    -webkit-transform: scale(0.8)
+    transform: scale(0.8)
+    opacity: 0
+
+@keyframes circles
+  from
+    -webkit-transform: scale(0)
+    transform: scale(0)
+
+  40%
+    opacity: 1
+
+  to
+    -webkit-transform: scale(0.8)
+    transform: scale(0.8)
+    opacity: 0
+
+  
 .contenedor
   width: 100%
   display: flex
@@ -81,6 +256,9 @@ body
   overflow-y: scroll
   padding-top: calc(56px + 1rem)
 
+.placeholder
+  cursor: default !important
+
 .product
   width: 100%
   display: flex
@@ -94,14 +272,15 @@ body
   border-radius: .7rem
   transition: all ease .3s
   gap: 1rem
-  cursor: pointer
 
   .img-placeholder
     width: 120px
     height: 130px
+    border-radius: .5rem
 
   img
     width: 120px
+    cursor: pointer
     border-radius: .5rem
 
   .box
@@ -115,6 +294,16 @@ body
       font-size: 1rem
       font-weight: 500
       letter-spacing: 0.1em
+      cursor: pointer
+
+    .price-wishlist
+      display: flex
+      align-items: center
+      gap: .25rem
+
+    .wishlist-placeholder
+      width: 16px
+      height: 16px
 
     span
       font-size: 1rem
