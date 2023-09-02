@@ -24,26 +24,31 @@
             <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <i class="bi bi-house-fill"></i>
+                            Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <button class="btn nav-link" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <i class="bi bi-cart-fill"></i>
+                            Cart
+                        </button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">Dropdown</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <button class="btn nav-link" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <i class="bi bi-bookmark-heart-fill"></i>
+                            Whishlist
+                        </button>
                     </li>
                 </ul>
                 <form role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <label for="searchInput">
+                        <i class="bi bi-search"></i>
+                    </label>
                 </form>
             </div>
         </div>
@@ -55,7 +60,10 @@
                 <a href="/"
                     class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
                     style="border-bottom-color: rgba(255, 255, 255, 0.222) !important">
-                    <span class="fs-5 fw-semibold">Filters</span>
+                    <span class="fs-5 fw-semibold">
+                        <i class="bi bi-funnel-fill"></i>
+                        Filters
+                    </span>
                 </a>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
@@ -226,6 +234,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">My cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            ...
         </div>
     </div>
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
