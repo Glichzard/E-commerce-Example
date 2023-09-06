@@ -30,16 +30,16 @@
                     </li>
                     <li class="nav-item">
                         <button class="btn nav-link" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                            <i class="bi bi-cart-fill"></i>
-                            Cart
+                            data-bs-target="#offcanvasWishlist" aria-controls="offcanvasWishlist">
+                            <i class="bi bi-bookmark-heart-fill"></i>
+                            Wishlist
                         </button>
                     </li>
                     <li class="nav-item">
                         <button class="btn nav-link" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasWishlist" aria-controls="offcanvasWishlist">
-                            <i class="bi bi-bookmark-heart-fill"></i>
-                            Whishlist
+                            data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                            <i class="bi bi-cart-fill"></i>
+                            Cart
                         </button>
                     </li>
                 </ul>
@@ -255,23 +255,29 @@
             </div>
         </div>
         <div id="showInfo"></div>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWishlist"
-            aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasWishlist">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">My Wishlist</h5>
+                <h5 class="offcanvas-title">My Wishlist</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                MY WISHLIST
             </div>
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">My cart</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <h5 class="offcanvas-title">My cart</h5>
             </div>
             <div class="offcanvas-body">
-                MY CART
+                <div class="product-list"></div>
+                <div class="summary">
+                    <h5>Summary</h5>
+                    <span>Total</span>
+                    <div class="button">
+                        <span class="total">U$D 0.00</span>
+                        <button>checkout</button>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
