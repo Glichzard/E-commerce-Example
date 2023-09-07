@@ -392,16 +392,26 @@ offcanvasCart.addEventListener('show.bs.offcanvas', async event => {
 function calcSummary() {
     const cart = initCart()
 
-    let total = 0.0
+    let subtotal = 0.0
 
     cart.forEach(product => {
         for(let i = 0; i < product.count; i++) {
-            total += product.price
+            subtotal += product.price
         }
     })
 
+    subtotal = subtotal.toFixed(2)
+
+    const tax = (subtotal * 0.05).toFixed(2)
+    const shipping = 25.00
+    
+    let total = parseFloat(subtotal) + parseFloat(tax) + parseFloat(shipping)
     total = total.toFixed(2)
 
+    document.querySelector("#offcanvasCart .summary .subtotal").innerText = "U$D " + subtotal    
+    document.querySelector("#offcanvasCart .summary .tax").innerText = "U$D " + tax
+
+    if(subtotal == 0) total = 0.00
     document.querySelector("#offcanvasCart .summary .total").innerText = "U$D " + total
 }
 
